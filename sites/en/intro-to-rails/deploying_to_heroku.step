@@ -1,5 +1,5 @@
 h2 do
-  span "If you haven't yet deployed to heroku, start at "
+  span "If you haven't yet deployed to Heroku, start at "
   a 'First-time setup', href: '#first-time'
   span ". Otherwise, start at "
   a 'Every time', href: '#every-time'
@@ -8,11 +8,11 @@ end
 
 a name: 'first-time'
 situation "First-time setup" do
-  step "Sign up for heroku" do
+  step "Sign up for Heroku" do
     message %{Go to <a href="https://signup.heroku.com/www-home-top">Heroku's webpage</a> and sign up for a free account.}
   end
 
-  step "Create a heroku application" do
+  step "Create a Heroku application" do
     console "heroku create"
     message "This command will ask you for your credentials - type in your Heroku email and password, hitting Enter after each one."
     message "`heroku create` registers a new application on Heroku's system. You should see some output including your new app's URL, which will look like http://sushi-island-6128.herokuapp.com/ ."
@@ -49,10 +49,10 @@ end
   end
 
   step "Commit the Gemfile changes" do
-    message "There are now changes to Gemfile and Gemfile.lock that need to be committed before we can push to heroku."
+    message "There are now changes to Gemfile and Gemfile.lock that need to be committed before we can push to Heroku."
     console <<-SHELL
 git add .
-git commit -m "Changed Gemfile for heroku"
+git commit -m "Changed Gemfile for Heroku"
     SHELL
     tip "There is a period after the word add in the first line."
   end
@@ -72,9 +72,9 @@ git commit -m "Some helpful message for your future self"
     message "Your commit message should reference whatever your outstanding changes are: something like 'added votes to the topics index'."
   end
 
-  step "Push changes to heroku" do
+  step "Push changes to Heroku" do
     console "git push heroku master"
-    message "This takes all changes you've committed locally and pushes them to heroku."
+    message "This takes all changes you've committed locally and pushes them to Heroku."
   end
 
   step "Run database migrations on Heroku" do
@@ -95,12 +95,12 @@ explanation do
   * The Gemfile is a list of all the Ruby libraries your application needs.
     What we've declared here is that we want to use the `sqlite3` library
     while we're developing on our computer (the development group) but when
-    deploying to heroku (the production group) we want to use the `pg` library,
-    which is made for the type of database that heroku uses.
+    deploying to Heroku (the production group) we want to use the `pg` library,
+    which is made for the type of database that Heroku uses.
 
   * Bundler is how Ruby projects keep track of the gems that they use. We told
     bundler what we wanted to use in the `Gemfile`, now we need to make sure those
-    gems are installed. Since we don't have the type of database heroku does, we
+    gems are installed. Since we don't have the type of database Heroku does, we
     skip the production gems. Don't worry though! Bundler still logs them so
     Heroku will install them when they get your code.
   MARKDOWN
